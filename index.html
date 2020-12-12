@@ -7,20 +7,25 @@
   <script src="./components/tooltip.js"></script>
   <script src="./components/confirm-link.js"></script>
   <style>
-    div {
-      border: 2px solid orange
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      --color-primary: #a4e6fc;
+      font-family: sans-serif;
     }
   </style>
 </head>
 <body>
   <p>
-    <savepong-tooltip text="Web components is a set of standards.">Web Components</savepong-tooltip>
+    <savepong-tooltip class="important" text="Web components is a set of standards.">
+      <span class="highlight">Web Components</span>
+    </savepong-tooltip>
     are awesome!
   </p>
-  <p>
-    <savepong-tooltip></savepong-tooltip>
-  </p>
-  <div>This does not get the web component styles!</div>
+  <savepong-tooltip></savepong-tooltip>
+  
   <a is="savepong-confirm-link" href="https://savepong.com">Savepong</a>
 </body>
 </html>
