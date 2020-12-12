@@ -12,6 +12,8 @@ class Tooltip extends HTMLElement {
           color: white;
           position: absolute;
           z-index: 10;
+          padding: 5px;
+          border-radius: 3px;
         }
       </style>
       <slot>Some default</slot>
