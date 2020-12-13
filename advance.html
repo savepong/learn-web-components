@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Components</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 2rem;
+      font-family: sans-serif;
+    }
+  </style>
+  <script src="./components/modal.js"></script>
+</head>
+<body>
+  <savepong-modal>
+    <h1 slot="title">Please Confirm Payment</h1>
+    <p>With your confirmation you agree to pay the full amount!</p>
+  </savepong-modal>
+  <p>Please confirm your choice.</p>
+  <button>Show Details & Confirm</button>
+  <script>
+    const confirmbutton = document.querySelector('button');
+    const modal = document.querySelector('savepong-modal');
+
+    modal.addEventListener('confirm', () => {
+      console.log('Confirmed...')
+    })
+
+    modal.addEventListener('cancel', () => {
+      console.log('Cancelled...')
+    })
+
+    confirmbutton.addEventListener('click', () => {
+      if (!modal.isOpen) {
+        modal.open();
+        console.log('Opening...')
+      }
+    })
+  </script>
+</body>
+</html>
